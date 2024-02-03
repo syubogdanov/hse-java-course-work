@@ -68,4 +68,23 @@ public class AlmaMaterTest {
             () -> almaMater.setLicense("Yet Another Problem")
         );
     }
+
+    @Test
+    public void testEquality() {
+        var almaMater1 = new AlmaMater("HSE", 2000);
+        var almaMater2 = new AlmaMater("HSE", 2000);
+
+        Assertions.assertEquals(almaMater1, almaMater2);
+
+        Assertions.assertFalse(almaMater1.hasLicense());
+        Assertions.assertFalse(almaMater2.hasLicense());
+
+        String license = "RU-0000-0000-0000";
+
+        almaMater1.setLicense(license);
+        almaMater2.setLicense(license);
+
+        Assertions.assertEquals(almaMater1, almaMater2);
+        Assertions.assertEquals(almaMater2, almaMater1);
+    }
 }

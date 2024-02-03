@@ -1,6 +1,7 @@
 package main.java.ru.hse.edu;
 
 import java.time.LocalDate;
+import java.util.Objects;
 import java.util.regex.Pattern;
 
 public class AlmaMater {
@@ -65,5 +66,40 @@ public class AlmaMater {
             throw new IllegalArgumentException("The alma mater does not have a license");
         }
         return this.license;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.getName());
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if (this == other) {
+            return true;
+        }
+
+        if (other == null) {
+            return false;
+        }
+
+        if (this.getClass() != other.getClass()) {
+            return false;
+        }
+
+        if (this.hashCode() != other.hashCode()) {
+            return false;
+        }
+
+        var almaMater = (AlmaMater) other;
+
+        boolean equalLicenses = !(this.hasLicense() ^ almaMater.hasLicense());
+        if (this.hasLicense() && almaMater.hasLicense()) {
+            equalLicenses = Objects.equals(this.getLicense(), almaMater.getLicense());
+        }
+
+        return Objects.equals(this.getName(), almaMater.getName()) &&
+               Objects.equals(this.getFoundationYear(), almaMater.getFoundationYear()) &&
+               equalLicenses;
     }
 }
