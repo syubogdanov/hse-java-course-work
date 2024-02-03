@@ -27,7 +27,7 @@ public class AlmaMater {
 
     public void setName(String name) {
         if (name == null) {
-            throw new IllegalArgumentException("The argument 'name' must be non-null");
+            throw new NullPointerException("The argument 'name' must be non-null");
         }
         if (!Pattern.compile("^[A-Z]+[a-z]*([ -][A-Z]+[a-z]*)*").matcher(name).matches()) {
             throw new IllegalArgumentException("The name does match the specification");
@@ -53,7 +53,7 @@ public class AlmaMater {
 
     public void setLicense(String license) {
         if (license == null) {
-            throw new IllegalArgumentException("The argument 'license' must be non-null");
+            throw new NullPointerException("The argument 'license' must be non-null");
         }
         if (!Pattern.compile("RU(-[0-9]{4}){3}").matcher(license).matches()) {
             throw new IllegalArgumentException("The license does match the specification");

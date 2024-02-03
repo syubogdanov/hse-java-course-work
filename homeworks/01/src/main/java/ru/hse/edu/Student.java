@@ -40,7 +40,7 @@ public class Student extends Person {
 
     public void setEmail(String email) {
         if (email == null) {
-            throw new IllegalArgumentException("The argument 'email' must be non-null");
+            throw new NullPointerException("The argument 'email' must be non-null");
         }
         if (!Pattern.compile("^[^@]+@[^@]+\\.[^@]+$").matcher(email).matches()) {
             throw new IllegalArgumentException("The email does not match the specification");
@@ -65,7 +65,7 @@ public class Student extends Person {
 
     public void setPhone(String phone) {
         if (phone == null) {
-            throw new IllegalArgumentException("The argument 'phone' must be non-null");
+            throw new NullPointerException("The argument 'phone' must be non-null");
         }
         if (!Pattern.compile("^\\+[1-9]{1}[0-9]{3,14}$").matcher(phone).matches()) {
             throw new IllegalArgumentException("The phone does not match the specification");
@@ -90,7 +90,7 @@ public class Student extends Person {
 
     public void setAlmaMater(AlmaMater almaMater, long graduationYear) {
         if (almaMater == null) {
-            throw new IllegalArgumentException("The argument 'almaMater' must be non-null");
+            throw new NullPointerException("The argument 'almaMater' must be non-null");
         }
         if (graduationYear < 0) {
             throw new IllegalArgumentException("The graduation year can not be negative");

@@ -31,7 +31,7 @@ public class PersonTest {
         }
 
         Assertions.assertThrows(
-            IllegalArgumentException.class,
+            NullPointerException.class,
             () -> person.setName(null)
         );
 
@@ -68,7 +68,7 @@ public class PersonTest {
         }
 
         Assertions.assertThrows(
-            IllegalArgumentException.class,
+            NullPointerException.class,
             () -> person.setSurname(null)
         );
 
@@ -104,7 +104,7 @@ public class PersonTest {
         }
 
         Assertions.assertThrows(
-            IllegalArgumentException.class,
+            NullPointerException.class,
             () -> person.setBirthday(null)
         );
 

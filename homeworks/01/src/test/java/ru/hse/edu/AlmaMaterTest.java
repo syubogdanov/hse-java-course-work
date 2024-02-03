@@ -27,7 +27,7 @@ public class AlmaMaterTest {
         }
 
         Assertions.assertThrows(
-            IllegalArgumentException.class,
+            NullPointerException.class,
             () -> almaMater.setName(null)
         );
 
@@ -59,7 +59,7 @@ public class AlmaMaterTest {
         Assertions.assertEquals(license, almaMater.getLicense());
 
         Assertions.assertThrows(
-            IllegalArgumentException.class,
+            NullPointerException.class,
             () -> almaMater.setLicense(null)
         );
 

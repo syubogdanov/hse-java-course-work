@@ -33,7 +33,7 @@ public class StudentTest {
         Assertions.assertEquals(other.getEmail(), student.getEmail());
 
         Assertions.assertThrows(
-            IllegalArgumentException.class,
+            NullPointerException.class,
             () -> student.setEmail(null)
         );
 
@@ -62,7 +62,7 @@ public class StudentTest {
         Assertions.assertEquals(student.getPhone(), other.getPhone());
 
         Assertions.assertThrows(
-            IllegalArgumentException.class,
+            NullPointerException.class,
             () -> student.setPhone(null)
         );
 

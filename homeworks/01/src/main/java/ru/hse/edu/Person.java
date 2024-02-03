@@ -25,7 +25,7 @@ public class Person {
 
     public void setName(String name) {
         if (name == null) {
-            throw new IllegalArgumentException("The argument 'name' must be non-null");
+            throw new NullPointerException("The argument 'name' must be non-null");
         }
         if (!Pattern.compile("^[A-Z][a-z]*([ -][A-Z][a-z]+)*$").matcher(name).matches()) {
             throw new IllegalArgumentException("The name must consist only of Latin letters");
@@ -39,7 +39,7 @@ public class Person {
 
     public void setSurname(String surname) {
         if (surname == null) {
-            throw new IllegalArgumentException("The argument 'surname' must be non-null");
+            throw new NullPointerException("The argument 'surname' must be non-null");
         }
         if (!Pattern.compile("^[A-Z][a-z]*([ -][A-Z][a-z]+)*$").matcher(surname).matches()) {
             throw new IllegalArgumentException("The surname must consist only of Latin letters");
@@ -53,7 +53,7 @@ public class Person {
 
     public void setBirthday(LocalDate birthday) {
         if (birthday == null) {
-            throw new IllegalArgumentException("The argument 'birthday' must be non-null");
+            throw new NullPointerException("The argument 'birthday' must be non-null");
         }
         if (birthday.isAfter(LocalDate.now())) {
             throw new IllegalArgumentException("The birthday can not be a future date");
